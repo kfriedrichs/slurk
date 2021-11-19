@@ -5,7 +5,7 @@
     golmi  slurk
     $ cd slurk
 ```
-1. Build the slurk docker image:
+1. Build the slurk docker image (make sure docker is running!):
 ```sh
     $ docker build --tag "slurk/server" -f Dockerfile .
 ```
@@ -17,7 +17,7 @@
 ```
 3. Start the slurk server:
 ```sh
-    $ scripts/start_server.sh
+    $ ./scripts/start_server.sh
 ``` 
 4. Navigate into the golmi directory and create an environment for golmi:
 ```sh
@@ -49,3 +49,14 @@
     $ echo $GOLMI_TOKEN
     6ca65ebe-8090-43ea-942e-27c1b074b312
 ``` 
+
+10. Navigate to `localhost:5000` (if you are using the default host and port for slurk) in a browser, the example golmi layout
+should be displayed on the right.
+
+##### A note on multiplayer GOLMI setups
+
+GOLMI has not yet implemented multiple players accessing the same
+board. 
+For this setting, members of the same *slurk room* also need
+to be assigned the same *GOLMI room*, perhaps by passing some
+shared slurk parameter upon connection to GOLMI.

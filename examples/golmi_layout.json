@@ -1,6 +1,6 @@
 {
-  "title": "Pentomino in GOLM",
-  "subtitle": "Demo of a Pentomino interface build using the GOLM framework",
+  "title": "Pentomino in GOLMI",
+  "subtitle": "Demo of a Pentomino interface build using the GOLMI framework",
   "html": [
     {
       "layout-type": "div",
