@@ -15,13 +15,23 @@ def golmi_request_url():
     socketio.emit("golmi_send_url", {"url": url})
 
 @socketio.event
+def forward_private_data(params):
+    """
+    Enable client-to-client communication using forwarding. The passed
+    data must contain the key 'session_id' to identify the addressee.
+    """
+    if "session_id" not in params:
+        return False, "Missing key 'session_id' in data"
+    socketio.emit("send_private_data", params, room=params["session_id"])
+
+@socketio.event
 def room_created(payload):
     db = current_app.session
     room = db.query(Room).get(payload["room"]) if "room" in payload else None
     task = db.query(Task).get(payload["task"]) if "task" in payload else None
 
     if "room" not in payload:
-        False, 'Missing argument "room"'
+        return False, 'Missing argument "room"'
     if not room:
         return False, f'User "{room}" does not exist'
     if "task" in payload and task is None:

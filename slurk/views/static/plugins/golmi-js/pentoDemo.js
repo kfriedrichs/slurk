@@ -3,6 +3,11 @@ $(document).ready(function () {
         "golmi_request_url"
     );
 
+    // for debugging: log all events
+    socket.onAny((eventName, ...args) => {
+        console.log(eventName, args);
+    });
+
     socket.on("golmi_send_url", (data) => {
 
         // Set to false to skip unit tests
@@ -43,6 +48,10 @@ $(document).ready(function () {
         const logView = new document.LogView(socket);
 
         // --- socket communication --- //
+        socket.on("send_private_data", (login) => {
+            console.log(login)
+        })
+
         socket.on("connect", () => {
             console.log("Connected to model server");
         });
@@ -67,11 +76,6 @@ $(document).ready(function () {
                 controller.attachModel(socket, "0");
                 setup_complete = true;
             }
-        });
-
-        // for debugging: log all events
-        socket.onAny((eventName, ...args) => {
-            console.log(eventName, args);
         });
 
         // --- stop and start drawing --- //
