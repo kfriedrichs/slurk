@@ -61,6 +61,12 @@ class PermissionsSchema(CommonSchema):
         description="Role for OpenVidu",
         filter_description="Filter for OpenVidu role",
     )
+    golmi_role = ma.fields.String(
+        validate=OneOf(["IG", "IF", "OBSERVER"]),
+        missing=None,
+        description="Role for Golmi",
+        filter_description="Filter for Golmi role",
+    )
 
 
 @blp.route("/")

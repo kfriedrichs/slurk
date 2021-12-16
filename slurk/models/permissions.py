@@ -17,3 +17,4 @@ class Permissions(Common):
     receive_bounding_box = Column(Boolean, nullable=False)
     broadcast = Column(Boolean, nullable=False)
     openvidu_role = Column(String)
+    golmi_role = Column(String)
