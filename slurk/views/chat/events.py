@@ -18,11 +18,14 @@ def golmi_request_url():
 def forward_private_data(params):
     """
     Enable client-to-client communication using forwarding. The passed
-    data must contain the key 'session_id' to identify the addressee.
+    data must contain the key 'session_id' to identify the addressee and
+    the key 'data' mapping to the data to forward
     """
     if "session_id" not in params:
-        return False, "Missing key 'session_id' in data"
-    socketio.emit("send_private_data", params, room=params["session_id"])
+        return False, "Missing key 'session_id' in params"
+    if "data" not in params:
+        return False, "Missing key 'data' in params"
+    socketio.emit("send_private_data", params["data"], room=params["session_id"])
 
 @socketio.event
 def room_created(payload):
