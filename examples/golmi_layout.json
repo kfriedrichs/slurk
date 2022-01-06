@@ -4,24 +4,6 @@
   "html": [
     {
       "layout-type": "div",
-      "style": "padding:10px;",
-      "layout-content": [
-        {
-          "layout-type": "button",
-          "id": "start",
-          "autocomplete": "off",
-          "layout-content": "Start"
-        },
-        {
-          "layout-type": "button",
-          "id": "stop",
-          "autocomplete": "off",
-          "layout-content": "Stop"
-        }
-      ]
-    },
-    {
-      "layout-type": "div",
       "id": "viewport",
       "style": "height: 600px; width: 600px; padding: 10px;",
       "layout-content": [
@@ -68,7 +50,6 @@
       "golmi-js/view/LayerView",
       "golmi-js/view/LView",
       "golmi-js/controller/LocalKeyController",
-      "golmi-js/PentoGenerator",
       "golmi-js/pentoDemo"
     ]
   }
