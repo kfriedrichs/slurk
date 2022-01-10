@@ -1,29 +1,29 @@
 {
   "title": "Pentomino in GOLMI",
-  "subtitle": "Demo of a Pentomino interface build using the GOLMI framework",
+  "subtitle": "Multiplayer Pentomino game built using the GOLMI framework",
   "html": [
     {
       "layout-type": "div",
       "id": "viewport",
-      "style": "height: 600px; width: 600px; padding: 10px;",
+      "style": "height: 500px; width: 500px; padding: 10px;",
       "layout-content": [
         {
           "layout-type": "canvas",
           "id": "background",
-          "width": "600",
-          "height": "600"
+          "width": "500",
+          "height": "500"
         },
         {
           "layout-type": "canvas",
           "id": "objects",
-          "width": "600",
-          "height": "600"
+          "width": "500",
+          "height": "500"
         },
         {
           "layout-type": "canvas",
           "id": "gripper",
-          "width": "600",
-          "height": "600"
+          "width": "500",
+          "height": "500"
         }
       ]
     }
@@ -50,7 +50,7 @@
       "golmi-js/view/LayerView",
       "golmi-js/view/LView",
       "golmi-js/controller/LocalKeyController",
-      "golmi-js/pentoDemo"
+      "golmi-js/pentomino_game"
     ]
   }
 }
