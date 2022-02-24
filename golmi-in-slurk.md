@@ -1,5 +1,5 @@
 ### How to use Golmi in Slurk (preliminary)
-0. Download *slurk* and *golmi* to the same directory and navigate into the slurk directory:
+0. Download *slurk*, *slurk-bots*, and *golmi* to the same directory and navigate into the slurk directory:
 ```sh
     $ ls
     golmi  slurk slurk-bots
@@ -63,7 +63,7 @@ Or, alternatively, using venv (assuming python3.9 is installed on your system):
 10. Navigate to `localhost:5000` (if you are using the default host and port for
 slurk) in a browser and enter a user name and your IF_TOKEN.
 The example golmi layout should be displayed on the right.
-**Note that in the current state, only a rectangle will be displayed. To start a
+**Note that in the current state, only a rectangle will be displayed.** To start a
 game, additional messages need to be sent to the golmi server, essentially creating
 and starting a game.
 
